@@ -36,6 +36,7 @@ class SignUp extends Component {
           errorObj.checkConfirmPassword = "Your Password Does Not Match!";
         }
     
+        // UNCOMMENT FOR PRODUCTION 
         // if (!isStrongPassword(this.state.password)) {
         //   errorObj.checkPasswordStrength =
         //     "password must minimum 8 characters and must contain an uppercase, a lower case, a number and special character !@#$%^&*()<>{}";

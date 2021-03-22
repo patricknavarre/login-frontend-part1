@@ -6,12 +6,16 @@ import SignUp from './component/SignUp/SignUp';
 import Login from './component/Login/Login';
 import Navbar from './component/Navbar/Navbar'
 
-const MainRouter = () =>  {
+const MainRouter = (props) =>  {
         return (
            <Router>
-            <Navbar />
+            <Navbar user={props.user} handleUserLogout={props.handleUserLogout} />
             <Switch>
-                <Route path="/login" component={Login} />
+                <Route path="/login" 
+                component={Login}
+                render={(routerProps) => {
+                    return <Login {...routerProps} handleUserLogin={props.handleUserLogin} />
+                }} />
                 <Route path="/sign-up" component={SignUp} />
                 <Route path="/" component={Home}/>
             </Switch>
